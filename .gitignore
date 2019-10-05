@@ -11,6 +11,8 @@ Spaceless_Data/
 *temp.meta
 Temp/
 *.app
+*.userprefs
+obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
 OBS.exe
 SCG.exe
 MultiTest.exe
