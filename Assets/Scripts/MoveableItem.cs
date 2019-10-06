@@ -73,11 +73,27 @@ public class MoveableItem : MonoBehaviour
         otherItem.lastStackStatusChangeFrame = Time.frameCount;
         otherItem.DestroyPhysics();
         otherItem.isoSorter.Unregister();
-        otherItem.t.SetParent(t);
+        otherItem.t.SetParent(t, true);
+        StartCoroutine(MoveOnToStack(otherItem));
+    }
+
+    private const float MOVE_TIME = 0.3f;
+    private IEnumerator MoveOnToStack(MoveableItem otherItem) {
         float y = (itemsOnTop.Count + 1) * 0.2f;
         Vector3 randomJitter = new Vector3(UnityEngine.Random.Range(-0.15f, 0.15f), UnityEngine.Random.Range(0, 0.15f), 0);
         Vector3 stackPos = stackingLocation == null ? Vector3.zero : stackingLocation.localPosition;
-        otherItem.t.localPosition = stackPos + new Vector3(0, y, 0) + randomJitter;
+
+        float elapsedTime = 0;
+        float progress = 0;
+        Vector3 startPos = otherItem.t.localPosition;
+        Vector3 endPos = stackPos + new Vector3(0, y, 0) + randomJitter;
+        while (progress <= 1) {
+            elapsedTime += Time.deltaTime;
+            progress = elapsedTime / MOVE_TIME;
+            otherItem.t.localPosition = Vector3.Lerp(startPos, endPos, Easing.easeInOutSine(0, 1, progress));
+            yield return null;
+        }
+        otherItem.t.localPosition = endPos;
         itemsOnTop.Add(otherItem);
         otherItem.partOfStack = true;
     }

@@ -19,7 +19,7 @@ public class StatUIManager : MonoBehaviour
             return health;
         }
         set {
-            health = Mathf.Max(0, value);
+            health = Mathf.Min(100, Mathf.Max(0, value));
             healthBar.fillAmount = health / 100f;
         }
     }
@@ -30,7 +30,7 @@ public class StatUIManager : MonoBehaviour
             return toilet;
         }
         set {
-            toilet = Mathf.Max(0, value);
+            toilet = Mathf.Min(100, Mathf.Max(0, value));
             toiletBar.fillAmount = toilet / 100f;
         }
     }
@@ -41,7 +41,7 @@ public class StatUIManager : MonoBehaviour
             return hunger;
         }
         set {
-            hunger = Mathf.Max(0, value);
+            hunger = Mathf.Min(100, Mathf.Max(0, value));
             hungerBar.fillAmount = hunger / 100f;
         }
     }
@@ -52,7 +52,7 @@ public class StatUIManager : MonoBehaviour
             return filth;
         }
         set {
-            filth = Mathf.Max(0, value);
+            filth = Mathf.Min(100, Mathf.Max(0, value));
             filthBar.fillAmount = filth / 100f;
         }
     }

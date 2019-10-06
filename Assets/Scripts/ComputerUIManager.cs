@@ -26,13 +26,17 @@ public class ComputerUIManager : MonoBehaviour
         InstantiateItemType(itemType);
     }
 
+    private List<MoveableItem> tempItems = new List<MoveableItem>();
     public void ShowComputerUI() {
-        MoveableItem[] items = itemCollection.items;
         mainObject.SetActive(true);
         Time.timeScale = 0;
+        tempItems.AddRange(itemCollection.items);
         for (int i = 0; i < itemPanels.Length; i++) {
-            itemPanels[i].Item = items[Random.Range(0, items.Length)];
+            int randomInt = Random.Range(0, tempItems.Count);
+            itemPanels[i].Item = tempItems[randomInt];
+            tempItems.RemoveAt(randomInt);
         }
+        tempItems.Clear();
     }
 
     public void InstantiateItemType(MoveableItem item) {
