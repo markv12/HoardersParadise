@@ -35,14 +35,14 @@ public class MoveableItem : MonoBehaviour
     [NonSerialized]
     public bool partOfStack = false;
     private int lastStackStatusChangeFrame = 0;
+    private const int FRAME_WAIT_COUNT = 35;
     private void OnCollisionEnter2D(Collision2D collision) {
-        if (Time.frameCount - lastStackStatusChangeFrame > 10) {
+        if (Time.frameCount - lastStackStatusChangeFrame > FRAME_WAIT_COUNT) {
             MoveableItem otherItem = collision.gameObject.GetComponent<MoveableItem>();
             if (otherItem != null &&
                 !partOfStack &&
                 stackable &&
-                otherItem.stackable &&
-                Time.frameCount - otherItem.lastStackStatusChangeFrame > 10) {
+                otherItem.stackable) {
                 if (itemsOnTop.Count == 0 && otherItem.itemsOnTop.Count == 0) {
                     if (!canBeOnTopOfOtherThings && otherItem.canBeOnTopOfOtherThings) {
                         PutItemOnTop(otherItem);
@@ -77,7 +77,7 @@ public class MoveableItem : MonoBehaviour
         StartCoroutine(MoveOnToStack(otherItem));
     }
 
-    private const float MOVE_TIME = 0.3f;
+    private const float MOVE_ON_TIME = 0.3f;
     private IEnumerator MoveOnToStack(MoveableItem otherItem) {
         float y = (itemsOnTop.Count + 1) * 0.2f;
         Vector3 randomJitter = new Vector3(UnityEngine.Random.Range(-0.15f, 0.15f), UnityEngine.Random.Range(0, 0.15f), 0);
@@ -89,7 +89,7 @@ public class MoveableItem : MonoBehaviour
         Vector3 endPos = stackPos + new Vector3(0, y, 0) + randomJitter;
         while (progress <= 1) {
             elapsedTime += Time.deltaTime;
-            progress = elapsedTime / MOVE_TIME;
+            progress = elapsedTime / MOVE_ON_TIME;
             otherItem.t.localPosition = Vector3.Lerp(startPos, endPos, Easing.easeInOutSine(0, 1, progress));
             yield return null;
         }
@@ -103,14 +103,31 @@ public class MoveableItem : MonoBehaviour
         Vector3 collapseDirection = (collapseSource - t.position).normalized;
         for (int i = 0; i < itemsOnTop.Count; i++) {
             MoveableItem item = itemsOnTop[i];
-            item.RestorePhysics();
-            item.t.localPosition += (collapseDirection*1.2f) * (i + 1);
             item.isoSorter.Register();
-            item.t.SetParent(null);
-            item.partOfStack = false;
+            item.t.SetParent(null, true);
             item.lastStackStatusChangeFrame = Time.frameCount;
+            Vector3 collapseVector = (collapseDirection * 1.2f) * (i + 1);
+            StartCoroutine(MoveOffOfStack(item, collapseVector));
         }
         itemsOnTop.Clear();
+    }
+
+    private const float FALL_OFF_TIME = 0.2f;
+    private IEnumerator MoveOffOfStack(MoveableItem item, Vector3 collapseVector) {
+        float elapsedTime = 0;
+        float progress = 0;
+        Vector3 startPos = item.t.localPosition;
+        Vector3 endPos = startPos + collapseVector;
+        while (progress <= 1) {
+            elapsedTime += Time.deltaTime;
+            progress = elapsedTime / FALL_OFF_TIME;
+            item.t.localPosition = Vector3.Lerp(startPos, endPos, Easing.easeInOutSine(0, 1, progress));
+            yield return null;
+        }
+
+        item.t.localPosition = endPos;
+        item.RestorePhysics();
+        item.partOfStack = false;
     }
 
     private void DestroyPhysics() {
