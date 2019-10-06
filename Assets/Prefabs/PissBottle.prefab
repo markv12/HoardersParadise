@@ -191,9 +191,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb229603d1f97184c8dd7dbc50660a21, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  title: Piss Bottle
-  websiteDescription: 
-  purchaseEventText: 
+  title: Bottle of Piss
+  websiteDescription: Created after a full day of drinking nothing but apple juice.
+    Sweetness guaranteed!
+  purchaseEventText: Your bladder can wait no longer. Frantically, you grab an empty
+    bottle and relieve yourself. It's no big deal, you can just clean it up later.
   sprite: {fileID: 21300000, guid: a8868c5e0e9ba8c40a3e337adc0a2891, type: 3}
   stackable: 1
   canBeOnTopOfOtherThings: 1
