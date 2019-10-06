@@ -167,7 +167,7 @@ MonoBehaviour:
   purchaseEventText: Wow! The special limited edition figurine of Debudebu Debuko
     from Debu Universe that you've always dreamed of...and it was such a steal! Now
     you can relive your best memories from binge watching the series whenever you
-    want!
+    want! You just aren't sure why the figurine feels so sticky...
   sprite: {fileID: 21300000, guid: 11ee9d6174014d347a88140c8124f9c0, type: 3}
   stackable: 1
   canBeOnTopOfOtherThings: 1
@@ -179,7 +179,7 @@ MonoBehaviour:
   purchaseHunger: 0
   purchaseExcretion: 0
   purchaseHealth: 0
-  purchaseFilth: 0
+  purchaseFilth: 2
   filthPerMinute: 0
   purchaseSatisfaction: 5000
   satisfactionPerSecond: 0
