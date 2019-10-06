@@ -39,7 +39,7 @@ public class ItemPanelManager : MonoBehaviour
     }
 
     private static string GenerateStatText(MoveableItem item) {
-        string result = " ";
+        string result = Environment.NewLine;
         if(item.purchaseHealth != 0) {
             result += "Health " + GetNumberString(item.purchaseHealth) + "  ";
         }

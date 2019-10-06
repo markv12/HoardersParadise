@@ -16,7 +16,7 @@ public class Player : MonoBehaviour
 
     public static Player instance;
 
-    private const float WALKING_SPEED = 5f;
+    private const float WALKING_SPEED = 6f;
     // Start is called before the first frame update
     public Bounds PlayerBounds {
         get {

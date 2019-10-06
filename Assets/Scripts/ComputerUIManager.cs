@@ -18,10 +18,15 @@ public class ComputerUIManager : MonoBehaviour {
         }
     }
 
-    private void ItemPanelClickedHandler(MoveableItem itemType) {
+    private HashSet<string> seenItemNames = new HashSet<string>();
+    private void ItemPanelClickedHandler(MoveableItem item) {
         mainObject.SetActive(false);
         Time.timeScale = 1;
-        InstantiateItemType(itemType, instantiationLocation.position);
+        if (!seenItemNames.Contains(item.title)) {
+            AlertCanvasManager.instance.ShowAlert(item.purchaseEventText);
+            seenItemNames.Add(item.title);
+        }
+        InstantiateItem(item, instantiationLocation.position);
     }
 
     private List<MoveableItem> tempItems = new List<MoveableItem>();
@@ -37,7 +42,7 @@ public class ComputerUIManager : MonoBehaviour {
         tempItems.Clear();
     }
 
-    public void InstantiateItemType(MoveableItem item, Vector3 position) {
+    public void InstantiateItem(MoveableItem item, Vector3 position) {
         GameObject newItem = Instantiate(item.gameObject);
         newItem.transform.position = position;
         StatUIManager.instance.RegisterItem(newItem.GetComponent<MoveableItem>());

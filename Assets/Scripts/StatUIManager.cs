@@ -109,7 +109,7 @@ public class StatUIManager : MonoBehaviour
             MoveableItem itemToCreate = Random.Range(0.0f, 1.0f) > 0.5f ? pissPrefab : crapPrefab;
             Vector3 instantiateLocation = Player.instance.footTransform.position;
             instantiateLocation.y -= 0.3f;
-            ComputerUIManager.instance.InstantiateItemType(itemToCreate, instantiateLocation);
+            ComputerUIManager.instance.InstantiateItem(itemToCreate, instantiateLocation);
             Toilet = 0;
         }
     }
