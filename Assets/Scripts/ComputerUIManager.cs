@@ -22,12 +22,14 @@ public class ComputerUIManager : MonoBehaviour
 
     private void ItemPanelClickedHandler(MoveableItem itemType) {
         mainObject.SetActive(false);
+        Time.timeScale = 1;
         InstantiateItemType(itemType);
     }
 
     public void ShowComputerUI() {
         MoveableItem[] items = itemCollection.items;
         mainObject.SetActive(true);
+        Time.timeScale = 0;
         for (int i = 0; i < itemPanels.Length; i++) {
             itemPanels[i].Item = items[Random.Range(0, items.Length)];
         }
@@ -36,5 +38,6 @@ public class ComputerUIManager : MonoBehaviour
     public void InstantiateItemType(MoveableItem item) {
         GameObject newItem = Instantiate(item.gameObject);
         newItem.transform.position = instantiationLocation.position;
+        StatUIManager.instance.RegisterItem(newItem.GetComponent<MoveableItem>());
     }
 }

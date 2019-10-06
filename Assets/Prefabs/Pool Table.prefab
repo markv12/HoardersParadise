@@ -1,5 +1,35 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &5419354240621737200
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4733873102666099514}
+  m_Layer: 0
+  m_Name: StackingPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4733873102666099514
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5419354240621737200}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.88, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 8879162181408978329}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8879162181408978325
 GameObject:
   m_ObjectHideFlags: 0
@@ -10,12 +40,12 @@ GameObject:
   m_Component:
   - component: {fileID: 8879162181408978329}
   - component: {fileID: 8879162181408978328}
+  - component: {fileID: 8879162181408978331}
   - component: {fileID: 8879162181408978330}
   - component: {fileID: 8879162181408978334}
   - component: {fileID: 8879162181408978335}
-  - component: {fileID: 1231228482604985317}
   m_Layer: 0
-  m_Name: GrandmasPizza
+  m_Name: Pool Table
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -29,9 +59,10 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8879162181408978325}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.14, y: -0.99, z: 0}
-  m_LocalScale: {x: 1, y: 0.8, z: 1}
-  m_Children: []
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 4733873102666099514}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -73,7 +104,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 10
-  m_Sprite: {fileID: 21300000, guid: 1e448fbde7f3f59419351e9e781386b7, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 4bff0f0f4509f464590a04d909345abb, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -84,6 +115,32 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &8879162181408978331
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8879162181408978325}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.063601255, y: -0.7800059}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 5.12, y: 2.84}
+    newSize: {x: 8.44, y: 5.96}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 4.040972, y: 1.1360396}
+  m_EdgeRadius: 0
 --- !u!50 &8879162181408978330
 Rigidbody2D:
   serializedVersion: 4
@@ -96,7 +153,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 5
   m_LinearDrag: 20
   m_AngularDrag: 0.05
   m_GravityScale: 0
@@ -120,7 +177,7 @@ MonoBehaviour:
   renderBelowAll: 0
   moveableItem: {fileID: 8879162181408978335}
   movingDependencies: []
-  SorterPositionOffset: {x: 0.04999137, y: 0.013070941, z: 0}
+  SorterPositionOffset: {x: -0.027734756, y: -1.1528182, z: 0}
   renderersToSort: []
 --- !u!114 &8879162181408978335
 MonoBehaviour:
@@ -134,49 +191,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb229603d1f97184c8dd7dbc50660a21, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  title: Grandma's Pizza
-  websiteDescription: 
-  purchaseEventText: 
-  sprite: {fileID: 21300000, guid: 1e448fbde7f3f59419351e9e781386b7, type: 3}
-  canBeOnTopOfOtherThings: 1
+  title: Pool Table
+  description: The real deal
+  sprite: {fileID: 21300000, guid: 4bff0f0f4509f464590a04d909345abb, type: 3}
+  canBeOnTopOfOtherThings: 0
   rigidBody: {fileID: 8879162181408978330}
-  theCollider: {fileID: 1231228482604985317}
+  theCollider: {fileID: 8879162181408978331}
   t: {fileID: 8879162181408978329}
   isoSorter: {fileID: 8879162181408978334}
-  stackingLocation: {fileID: 0}
-  purchaseHunger: -20
-  purchaseExcretion: 5
-  purchaseHealth: 0
-  purchaseFilth: 0
-  filthPerMinute: 0
+  stackingLocation: {fileID: 4733873102666099514}
   itemsOnTop: []
---- !u!60 &1231228482604985317
-PolygonCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8879162181408978325}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2.048, y: 2.048}
-    newSize: {x: 8.44, y: 5.96}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: -0.9684622, y: -0.14145958}
-      - {x: 0.19817567, y: -1.0098244}
-      - {x: 0.98326707, y: 0.044709206}
-      - {x: 0.20343566, y: 0.627938}
-      - {x: -0.3152206, y: 0.61254865}

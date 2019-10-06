@@ -21,7 +21,7 @@ public class ItemPanelManager : MonoBehaviour
         set {
             item = value;
             itemText.text = item.title;
-            itemDescText.text = item.description;
+            itemDescText.text = item.websiteDescription;
             mainImage.sprite = item.sprite;
         }
     }
