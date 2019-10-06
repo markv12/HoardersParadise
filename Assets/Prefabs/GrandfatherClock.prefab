@@ -191,9 +191,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb229603d1f97184c8dd7dbc50660a21, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  title: Grandfather Clock
-  websiteDescription: 
-  purchaseEventText: 
+  title: Heirloom Grandfather Clock
+  websiteDescription: This old clock has been an heirloom in my family for hundreds
+    of years, ever since we were pirates in the Golden Age of Piracy. Some even claim
+    it is haunted. Unfortunately I have to sell it due to being in debt. If you buy
+    this clock, you will be buying a piece of pirate history.
+  purchaseEventText: The grandfather clock arrived in one piece! Its majesty when
+    you look upon it instantly conjures up romantic images of the Golden Age of Piracy.
+    You feel like you can hear a strange squeaking sound coming from inside, but it's
+    probably just your imagination.
   sprite: {fileID: 21300000, guid: e8ac8d689da3f6c4d9703c920d8c1180, type: 3}
   stackable: 1
   canBeOnTopOfOtherThings: 0
@@ -205,8 +211,8 @@ MonoBehaviour:
   purchaseHunger: 0
   purchaseExcretion: 0
   purchaseHealth: 0
-  purchaseFilth: 0
+  purchaseFilth: 5
   filthPerMinute: 0
-  purchaseSatisfaction: 30
+  purchaseSatisfaction: 800
   satisfactionPerSecond: 0
   itemsOnTop: []
