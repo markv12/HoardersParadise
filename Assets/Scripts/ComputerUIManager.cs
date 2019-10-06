@@ -44,4 +44,5 @@ public class ComputerUIManager : MonoBehaviour
         newItem.transform.position = position;
         StatUIManager.instance.RegisterItem(newItem.GetComponent<MoveableItem>());
     }
+
 }
