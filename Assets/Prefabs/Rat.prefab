@@ -14,9 +14,8 @@ GameObject:
   - component: {fileID: 3767925423049286366}
   - component: {fileID: 3767925423049286367}
   - component: {fileID: 6801967094204316837}
-  - component: {fileID: 7881494680586526586}
   m_Layer: 0
-  m_Name: Cat
+  m_Name: Rat
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -74,7 +73,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 10
-  m_Sprite: {fileID: 21300000, guid: 377b425e3b5bafc489464869b147b5ef, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e6c531af541a5aa4eb4d92ef002e80bf, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -135,10 +134,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb229603d1f97184c8dd7dbc50660a21, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  title: Cat
+  title: Rat
   websiteDescription: He cute tho
   purchaseEventText: 
-  sprite: {fileID: 21300000, guid: 377b425e3b5bafc489464869b147b5ef, type: 3}
+  sprite: {fileID: 21300000, guid: e6c531af541a5aa4eb4d92ef002e80bf, type: 3}
   stackable: 0
   canBeOnTopOfOtherThings: 1
   rigidBody: {fileID: 3767925423049286362}
@@ -171,7 +170,7 @@ PolygonCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2.048, y: 1.712}
+    oldSize: {x: 1.536, y: 0.4}
     newSize: {x: 8.44, y: 5.96}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -179,21 +178,8 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: -0.7823571, y: -0.78701186}
-      - {x: 0.023702085, y: -0.84698236}
-      - {x: 0.6924775, y: -0.7927641}
-      - {x: 0.23911858, y: -0.5850618}
-      - {x: -0.3268522, y: -0.58550334}
---- !u!114 &7881494680586526586
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3767925423049286357}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1c4a1ab41d0df6544bb2cfd63f17a97b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rgdBody: {fileID: 3767925423049286362}
+    - - {x: -0.21811557, y: -0.16337621}
+      - {x: 0.37582278, y: -0.20213461}
+      - {x: 0.74482536, y: -0.107483864}
+      - {x: 0.35366392, y: -0.025062442}
+      - {x: 0.11011672, y: -0.038231254}
