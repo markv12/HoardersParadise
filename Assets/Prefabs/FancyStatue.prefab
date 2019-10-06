@@ -212,6 +212,6 @@ MonoBehaviour:
   purchaseHealth: 0
   purchaseFilth: 0
   filthPerMinute: 0
-  purchaseSatisfaction: 600
+  purchaseSatisfaction: 6000
   satisfactionPerSecond: 0
   itemsOnTop: []
