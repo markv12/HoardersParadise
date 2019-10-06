@@ -1,35 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &5419354240621737200
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 4733873102666099514}
-  m_Layer: 0
-  m_Name: StackingPoint
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &4733873102666099514
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5419354240621737200}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.166, y: 2.048, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 8879162181408978329}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8879162181408978325
 GameObject:
   m_ObjectHideFlags: 0
@@ -45,7 +15,7 @@ GameObject:
   - component: {fileID: 8879162181408978334}
   - component: {fileID: 8879162181408978335}
   m_Layer: 0
-  m_Name: FancyStatue
+  m_Name: Doll1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -59,10 +29,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8879162181408978325}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 3.14, y: -0.99, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 4733873102666099514}
+  m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -104,7 +73,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 10
-  m_Sprite: {fileID: 21300000, guid: 5fae41684e183ea41abbbb6f4fd3539c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 11ee9d6174014d347a88140c8124f9c0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -128,18 +97,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.088911176, y: -2.062237}
+  m_Offset: {x: 0.10820472, y: -0.6167908}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2.1538463, y: 4.6153846}
+    oldSize: {x: 1.0893617, y: 1.7021277}
     newSize: {x: 8.44, y: 5.96}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.7293751, y: 0.35296106}
+  m_Size: {x: 0.6628711, y: 0.45511842}
   m_EdgeRadius: 0
 --- !u!50 &8879162181408978330
 Rigidbody2D:
@@ -153,7 +122,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 5
+  m_Mass: 1
   m_LinearDrag: 20
   m_AngularDrag: 0.05
   m_GravityScale: 0
@@ -177,7 +146,7 @@ MonoBehaviour:
   renderBelowAll: 0
   moveableItem: {fileID: 8879162181408978335}
   movingDependencies: []
-  SorterPositionOffset: {x: 0.10550846, y: -2.0942078, z: 0}
+  SorterPositionOffset: {x: 0.09410143, y: -0.6531184, z: 0}
   renderersToSort: []
 --- !u!114 &8879162181408978335
 MonoBehaviour:
@@ -191,27 +160,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb229603d1f97184c8dd7dbc50660a21, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  title: 100% Authentic Greek Statue Replica
-  websiteDescription: YOU are currently viewing a 100% authentic replica of an ancient
-    Greek statue imported straight from Greece. This statue was hand-crafted by a
-    master of the ancient art of Greek sculpture and would be the perfect addition
-    to any household or office hallway.
-  purchaseEventText: The statue definitely has some wear and tear, but it still looks
-    beautiful. As an avid art lover, you feel incredilbly lucky and honored to be
-    able to own such a cool piece of history.
-  sprite: {fileID: 21300000, guid: 5fae41684e183ea41abbbb6f4fd3539c, type: 3}
+  title: Doll
+  websiteDescription: 
+  purchaseEventText: 
+  sprite: {fileID: 21300000, guid: 11ee9d6174014d347a88140c8124f9c0, type: 3}
   stackable: 1
-  canBeOnTopOfOtherThings: 0
+  canBeOnTopOfOtherThings: 1
   rigidBody: {fileID: 8879162181408978330}
   theCollider: {fileID: 8879162181408978331}
   t: {fileID: 8879162181408978329}
   isoSorter: {fileID: 8879162181408978334}
-  stackingLocation: {fileID: 4733873102666099514}
+  stackingLocation: {fileID: 0}
   purchaseHunger: 0
   purchaseExcretion: 0
   purchaseHealth: 0
   purchaseFilth: 0
   filthPerMinute: 0
-  purchaseSatisfaction: 600
+  purchaseSatisfaction: 100
   satisfactionPerSecond: 0
   itemsOnTop: []

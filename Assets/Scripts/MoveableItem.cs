@@ -80,7 +80,7 @@ public class MoveableItem : MonoBehaviour
     private const float MOVE_ON_TIME = 0.3f;
     private IEnumerator MoveOnToStack(MoveableItem otherItem) {
         float y = (itemsOnTop.Count + 1) * 0.2f;
-        Vector3 randomJitter = new Vector3(UnityEngine.Random.Range(-0.15f, 0.15f), UnityEngine.Random.Range(0, 0.15f), 0);
+        Vector3 randomJitter = new Vector3(UnityEngine.Random.Range(-0.1f, 0.1f), UnityEngine.Random.Range(0, 0.1f), 0);
         Vector3 stackPos = stackingLocation == null ? Vector3.zero : stackingLocation.localPosition;
 
         float elapsedTime = 0;
