@@ -135,9 +135,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb229603d1f97184c8dd7dbc50660a21, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  title: Cat 2
-  websiteDescription: 
-  purchaseEventText: 
+  title: Sweet Kittie
+  websiteDescription: Extremely sweet and adorable kittie. I love it but I have allergies
+    :(
+  purchaseEventText: Your cat arrived safely. It purrs a lot and seems really happy
+    to be here with you!
   sprite: {fileID: 21300000, guid: be140eb1d4489b84fa07822c5cb8c172, type: 3}
   stackable: 0
   canBeOnTopOfOtherThings: 1
@@ -171,7 +173,7 @@ PolygonCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 5.12, y: 4.28}
+    oldSize: {x: 2.048, y: 1.712}
     newSize: {x: 8.44, y: 5.96}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
