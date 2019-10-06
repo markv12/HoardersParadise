@@ -34,33 +34,44 @@ public class MoveableItem : MonoBehaviour
 
     [NonSerialized]
     public bool partOfStack = false;
-
+    private int lastStackStatusChangeFrame = 0;
     private void OnCollisionEnter2D(Collision2D collision) {
-        MoveableItem otherItem = collision.gameObject.GetComponent<MoveableItem>();
-        if (otherItem != null && !partOfStack && stackable && otherItem.stackable) {
-            if (itemsOnTop.Count == 0 && otherItem.itemsOnTop.Count == 0) {
-                if (!canBeOnTopOfOtherThings && otherItem.canBeOnTopOfOtherThings) {
-                    PutItemOnTop(otherItem);
-                }
-                if(canBeOnTopOfOtherThings && otherItem.canBeOnTopOfOtherThings) {
-                    Transform pT = Player.instance.transform;
-                    float selfToPlayer = Vector3.Distance(t.position, pT.position);
-                    float otherToPlayer = Vector3.Distance(otherItem.t.position, pT.position);
-                    if (selfToPlayer > otherToPlayer) {
+        if (Time.frameCount - lastStackStatusChangeFrame > 10) {
+            MoveableItem otherItem = collision.gameObject.GetComponent<MoveableItem>();
+            if (otherItem != null &&
+                !partOfStack &&
+                stackable &&
+                otherItem.stackable &&
+                Time.frameCount - otherItem.lastStackStatusChangeFrame > 10) {
+                if (itemsOnTop.Count == 0 && otherItem.itemsOnTop.Count == 0) {
+                    if (!canBeOnTopOfOtherThings && otherItem.canBeOnTopOfOtherThings) {
+                        PutItemOnTop(otherItem);
+                    }
+                    if (canBeOnTopOfOtherThings && otherItem.canBeOnTopOfOtherThings) {
+                        Transform pT = Player.instance.transform;
+                        float selfToPlayer = Vector3.Distance(t.position, pT.position);
+                        float otherToPlayer = Vector3.Distance(otherItem.t.position, pT.position);
+                        if (selfToPlayer > otherToPlayer) {
+                            PutItemOnTop(otherItem);
+                        }
+                    }
+                } else if (itemsOnTop.Count == 0 || otherItem.itemsOnTop.Count == 0) {
+                    if (itemsOnTop.Count > 0 && otherItem.canBeOnTopOfOtherThings) {
                         PutItemOnTop(otherItem);
                     }
                 }
-            } else if (itemsOnTop.Count == 0 || otherItem.itemsOnTop.Count == 0) {
-                if(itemsOnTop.Count > 0 && otherItem.canBeOnTopOfOtherThings) {
-                    PutItemOnTop(otherItem);
-                }
+            }
+            Player player = collision.gameObject.GetComponent<Player>();
+            if (player != null && itemsOnTop.Count > 0) {
+                CollapseStack(player.footTransform.position);
             }
         }
     }
 
     private void PutItemOnTop(MoveableItem otherItem) {
-        Destroy(otherItem.theCollider);
-        Destroy(otherItem.rigidBody);
+        lastStackStatusChangeFrame = Time.frameCount;
+        otherItem.lastStackStatusChangeFrame = Time.frameCount;
+        otherItem.DestroyPhysics();
         otherItem.isoSorter.Unregister();
         otherItem.t.SetParent(t);
         float y = (itemsOnTop.Count + 1) * 0.2f;
@@ -70,4 +81,57 @@ public class MoveableItem : MonoBehaviour
         itemsOnTop.Add(otherItem);
         otherItem.partOfStack = true;
     }
+
+    private void CollapseStack(Vector3 collapseSource) {
+        lastStackStatusChangeFrame = Time.frameCount;
+        Vector3 collapseDirection = (collapseSource - t.position).normalized;
+        for (int i = 0; i < itemsOnTop.Count; i++) {
+            MoveableItem item = itemsOnTop[i];
+            item.RestorePhysics();
+            item.t.localPosition += (collapseDirection*1.2f) * (i + 1);
+            item.isoSorter.Register();
+            item.t.SetParent(null);
+            item.partOfStack = false;
+            item.lastStackStatusChangeFrame = Time.frameCount;
+        }
+        itemsOnTop.Clear();
+    }
+
+    private void DestroyPhysics() {
+        rgdBodyLinearDrag = rigidBody.drag;
+        if (theCollider is BoxCollider2D) {
+            BoxCollider2D theBox = theCollider as BoxCollider2D;
+            boxColliderOffset = theBox.offset;
+            boxColliderSize = theBox.size;
+        }
+        if (theCollider is PolygonCollider2D) {
+            PolygonCollider2D thePolygon = theCollider as PolygonCollider2D;
+            polygonColliderPath = thePolygon.GetPath(0);
+        }
+        Destroy(theCollider);
+        Destroy(rigidBody);
+    }
+
+    private void RestorePhysics() {
+        rigidBody = gameObject.AddComponent<Rigidbody2D>();
+        rigidBody.mass = rgdBodyMass;
+        rigidBody.drag = rgdBodyLinearDrag;
+        rigidBody.constraints = RigidbodyConstraints2D.FreezeRotation;
+        rigidBody.gravityScale = 0;
+        if (boxColliderOffset != Vector2.zero) {
+            theCollider = gameObject.AddComponent<BoxCollider2D>();
+            theCollider.offset = boxColliderOffset;
+            (theCollider as BoxCollider2D).size = boxColliderSize;
+        }
+        if(polygonColliderPath != null) {
+            theCollider = gameObject.AddComponent<PolygonCollider2D>();
+            (theCollider as PolygonCollider2D).SetPath(0, polygonColliderPath);
+        }
+    }
+
+    private float rgdBodyMass;
+    private float rgdBodyLinearDrag;
+    private Vector2 boxColliderOffset = Vector2.zero;
+    private Vector2 boxColliderSize = Vector2.zero;
+    private Vector2[] polygonColliderPath = null;
 }

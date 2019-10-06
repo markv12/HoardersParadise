@@ -1007,6 +1007,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1056842270}
+  - {fileID: 1449988839}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1025,6 +1026,7 @@ MonoBehaviour:
   rgdBody: {fileID: 229549865}
   spriteRenderer: {fileID: 1056842271}
   spriteTransform: {fileID: 1056842270}
+  footTransform: {fileID: 1449988839}
   rightSprite: {fileID: 21300000, guid: 2bc9e5fb351ca6e468a8bfcd69baa904, type: 3}
   upSprite: {fileID: 21300000, guid: 97e232c244ac0ca44872c279111e331f, type: 3}
   downSprite: {fileID: 21300000, guid: b28404ffb8e321a4dbf4d93696c7ce22, type: 3}
@@ -3464,6 +3466,36 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e02bd7c894f2ac248bc72e657b3268d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1449988838
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1449988839}
+  m_Layer: 0
+  m_Name: Feet
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1449988839
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1449988838}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.023, y: -1.801, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 229549863}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1464036982
 GameObject:
   m_ObjectHideFlags: 0

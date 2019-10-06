@@ -8,6 +8,7 @@ public class Player : MonoBehaviour
     public Rigidbody2D rgdBody;
     public SpriteRenderer spriteRenderer;
     public Transform spriteTransform;
+    public Transform footTransform;
 
     public Sprite rightSprite;
     public Sprite upSprite;
