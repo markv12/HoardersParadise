@@ -160,7 +160,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb229603d1f97184c8dd7dbc50660a21, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  title: Ramen Cup
+  title: Master Sensei Ramen Cup
   websiteDescription: 
   purchaseEventText: 
   sprite: {fileID: 21300000, guid: ba56b34de22f82f4696ebe27cfaf2ce0, type: 3}

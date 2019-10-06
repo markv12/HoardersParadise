@@ -191,7 +191,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb229603d1f97184c8dd7dbc50660a21, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  title: Pot Pie
+  title: Bob Chikin's Chicken Pot Pie
   websiteDescription: 
   purchaseEventText: 
   sprite: {fileID: 21300000, guid: f1336e212e2cd7448aad0dfc9cb5b93a, type: 3}
