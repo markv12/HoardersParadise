@@ -87,9 +87,9 @@ public class StatUIManager : MonoBehaviour
         Filth = 0f;
     }
 
-    private const float HUNGER_PER_SECOND = 1.666f;
-    private const float HUNGER_HEALTH_LOSS_PER_SECOND = 1f;
-    private const float TOILET_PER_SECOND = 1.666f;
+    public float hungerPerSecond = 1.666f;
+    public float hungerHealthLossPerSecond = 1f;
+    public float toiletPerSecond = 1.666f;
 
     private float accumulatedSatisfaction = 0;
     void Update()
@@ -100,10 +100,10 @@ public class StatUIManager : MonoBehaviour
         accumulatedSatisfaction -= satInt;
 
         Filth += (currentFilthPerMinute / 60f) * Time.deltaTime;
-        Hunger += HUNGER_PER_SECOND * Time.deltaTime; 
-        Toilet += TOILET_PER_SECOND * Time.deltaTime;
+        Hunger += hungerPerSecond * Time.deltaTime; 
+        Toilet += toiletPerSecond * Time.deltaTime;
         if(Hunger >= 100) {
-            Health -= HUNGER_HEALTH_LOSS_PER_SECOND * Time.deltaTime;
+            Health -= hungerHealthLossPerSecond * Time.deltaTime;
         }
         if(Toilet >= 100) {
             MoveableItem itemToCreate = Random.Range(0.0f, 1.0f) > 0.5f ? pissPrefab : crapPrefab;
