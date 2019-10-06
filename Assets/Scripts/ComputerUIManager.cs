@@ -2,8 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ComputerUIManager : MonoBehaviour
-{
+public class ComputerUIManager : MonoBehaviour {
     public static ComputerUIManager instance;
 
     public GameObject mainObject;
@@ -11,8 +10,7 @@ public class ComputerUIManager : MonoBehaviour
     public ItemCollection itemCollection;
     public Transform instantiationLocation;
 
-    void Awake()
-    {
+    void Awake() {
         mainObject.SetActive(false);
         instance = this;
         for (int i = 0; i < itemPanels.Length; i++) {
@@ -44,5 +42,4 @@ public class ComputerUIManager : MonoBehaviour
         newItem.transform.position = position;
         StatUIManager.instance.RegisterItem(newItem.GetComponent<MoveableItem>());
     }
-
 }
