@@ -135,8 +135,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   title: Rat
-  websiteDescription: He cute tho
-  purchaseEventText: 
+  websiteDescription: Free rat! He cute tho.
+  purchaseEventText: A rat! Eyaaaaaaaagh!!
   sprite: {fileID: 21300000, guid: e6c531af541a5aa4eb4d92ef002e80bf, type: 3}
   stackable: 0
   canBeOnTopOfOtherThings: 1

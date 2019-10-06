@@ -191,9 +191,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb229603d1f97184c8dd7dbc50660a21, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  title: Crap Sack
-  websiteDescription: 
-  purchaseEventText: 
+  title: Organic Fertilizer
+  websiteDescription: Homemade, guaranteed freshness. Also happy to deliver in person.
+  purchaseEventText: 'Suddenly, you''re overcome by a horrible, crippling stomachache.
+    Panicked, you grab a nearby plastic bag and defecate into it. Reeling from the
+    searing pain and the horrible stench, you wonder: how did it come to this?'
   sprite: {fileID: 21300000, guid: f8787fd513b62124da641e3d20bc66fd, type: 3}
   stackable: 1
   canBeOnTopOfOtherThings: 1
