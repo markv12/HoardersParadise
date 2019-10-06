@@ -8,9 +8,11 @@ public class MoveableItem : MonoBehaviour
     public string title;
     [TextArea]
     public string websiteDescription;
+    [TextArea]
     public string purchaseEventText;
 
     public Sprite sprite;
+    public bool stackable = true;
     public bool canBeOnTopOfOtherThings = true;
 
     public Rigidbody2D rigidBody;
@@ -25,6 +27,8 @@ public class MoveableItem : MonoBehaviour
     public float purchaseHealth;
     public float purchaseFilth;
     public float filthPerMinute;
+    public int purchaseSatisfaction;
+    public int satisfactionPerSecond;
 
     public List<MoveableItem> itemsOnTop = new List<MoveableItem>();
 
@@ -33,7 +37,7 @@ public class MoveableItem : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision) {
         MoveableItem otherItem = collision.gameObject.GetComponent<MoveableItem>();
-        if (otherItem != null && !partOfStack) {
+        if (otherItem != null && !partOfStack && stackable && otherItem.stackable) {
             if (itemsOnTop.Count == 0 && otherItem.itemsOnTop.Count == 0) {
                 if (!canBeOnTopOfOtherThings && otherItem.canBeOnTopOfOtherThings) {
                     PutItemOnTop(otherItem);

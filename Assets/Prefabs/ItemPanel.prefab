@@ -138,8 +138,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Big 'ol Chip sack
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: a5b02eb21f5682b48b1ca4671a6fbeab, type: 2}
-  m_sharedMaterial: {fileID: 2019213075480161134, guid: a5b02eb21f5682b48b1ca4671a6fbeab,
+  m_fontAsset: {fileID: 11400000, guid: 2d348060571bbc34a96ab8e549da8826, type: 2}
+  m_sharedMaterial: {fileID: -2023025855525696347, guid: 2d348060571bbc34a96ab8e549da8826,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -431,8 +431,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Feed you real good
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: a5b02eb21f5682b48b1ca4671a6fbeab, type: 2}
-  m_sharedMaterial: {fileID: 2019213075480161134, guid: a5b02eb21f5682b48b1ca4671a6fbeab,
+  m_fontAsset: {fileID: 11400000, guid: 2d348060571bbc34a96ab8e549da8826, type: 2}
+  m_sharedMaterial: {fileID: -2023025855525696347, guid: 2d348060571bbc34a96ab8e549da8826,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
