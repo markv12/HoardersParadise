@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 8879162181408978334}
   - component: {fileID: 8879162181408978335}
   m_Layer: 0
-  m_Name: Doll1
+  m_Name: Doll
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -160,9 +160,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb229603d1f97184c8dd7dbc50660a21, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  title: Doll
-  websiteDescription: 
-  purchaseEventText: 
+  title: Debu Universe Limited Edition Figurine
+  websiteDescription: "Only 100 made in total, special limited edition figurine that
+    was ONLY sold in Japan during the original run of Debu Universe 2nd Mission. Buy
+    now or be sorry!!\r"
+  purchaseEventText: Wow! The special limited edition figurine of Debudebu Debuko
+    from Debu Universe that you've always dreamed of...and it was such a steal! Now
+    you can relive your best memories from binge watching the series whenever you
+    want!
   sprite: {fileID: 21300000, guid: 11ee9d6174014d347a88140c8124f9c0, type: 3}
   stackable: 1
   canBeOnTopOfOtherThings: 1
@@ -176,6 +181,6 @@ MonoBehaviour:
   purchaseHealth: 0
   purchaseFilth: 0
   filthPerMinute: 0
-  purchaseSatisfaction: 100
+  purchaseSatisfaction: 5000
   satisfactionPerSecond: 0
   itemsOnTop: []
