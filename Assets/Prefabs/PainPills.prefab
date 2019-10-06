@@ -198,7 +198,7 @@ MonoBehaviour:
     like all your pain was magically spirited away. They sort of taste good, too.
   sprite: {fileID: 21300000, guid: eb492d0ef4723d149a2fa1951137f1a4, type: 3}
   stackable: 1
-  canBeOnTopOfOtherThings: 0
+  canBeOnTopOfOtherThings: 1
   rigidBody: {fileID: 8879162181408978330}
   theCollider: {fileID: 8879162181408978331}
   t: {fileID: 8879162181408978329}
