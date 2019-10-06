@@ -191,7 +191,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb229603d1f97184c8dd7dbc50660a21, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  title: EZ Kleen
+  title: E-Z Kleen
   websiteDescription: 
   purchaseEventText: 
   sprite: {fileID: 21300000, guid: 85380c70ce1f57c41b54b120cab3bf14, type: 3}
