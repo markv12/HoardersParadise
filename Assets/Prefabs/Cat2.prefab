@@ -135,7 +135,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb229603d1f97184c8dd7dbc50660a21, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  title: Sweet Kittie
+  title: Sweetest Kittie in the World
   websiteDescription: Extremely sweet and adorable kittie. I love it but I have allergies
     :(
   purchaseEventText: Your cat arrived safely. It purrs a lot and seems really happy
