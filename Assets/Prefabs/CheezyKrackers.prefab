@@ -173,11 +173,11 @@ MonoBehaviour:
   t: {fileID: 8879162181408978329}
   isoSorter: {fileID: 8879162181408978334}
   stackingLocation: {fileID: 0}
-  purchaseHunger: -10
-  purchaseExcretion: 2
+  purchaseHunger: -15
+  purchaseExcretion: 10
   purchaseHealth: 0
-  purchaseFilth: 1
-  filthPerMinute: 0
+  purchaseFilth: 2
+  filthPerMinute: 1
   purchaseSatisfaction: 0
   satisfactionPerSecond: 0
   itemsOnTop: []

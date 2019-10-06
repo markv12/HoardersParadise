@@ -206,7 +206,7 @@ MonoBehaviour:
   stackingLocation: {fileID: 4733873102666099514}
   purchaseHunger: 0
   purchaseExcretion: 0
-  purchaseHealth: 0
+  purchaseHealth: 20
   purchaseFilth: 0
   filthPerMinute: 0
   purchaseSatisfaction: 100
