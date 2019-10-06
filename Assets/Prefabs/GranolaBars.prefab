@@ -134,9 +134,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb229603d1f97184c8dd7dbc50660a21, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  title: GranolaBars
-  websiteDescription: 
-  purchaseEventText: 
+  title: Healthy Granola Val-U-Pak
+  websiteDescription: Can't eat anymore due to my low carb diet. I hope u enjoy them.
+  purchaseEventText: These were your go-to snack whenever you were running late on
+    mornings before school. Honestly, you're kind of sick of them, but they do the
+    job.
   sprite: {fileID: 21300000, guid: 7912045210ba03c479592bd809e08324, type: 3}
   stackable: 1
   canBeOnTopOfOtherThings: 1

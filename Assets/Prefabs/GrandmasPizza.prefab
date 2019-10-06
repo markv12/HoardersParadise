@@ -135,9 +135,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   title: Grandma's Pizza
-  websiteDescription: 
-  purchaseEventText: 
+  websiteDescription: Ordered by mistake. All slices still in tact.
+  purchaseEventText: You still remember the first time your parents took you to the
+    original Grandma's Pizza. It was dark, with low lights, and the seats were cozy.
+    The greasy cheese on every slice of the pie reminds you of what it felt like to
+    be a kid.
   sprite: {fileID: 21300000, guid: 1e448fbde7f3f59419351e9e781386b7, type: 3}
+  stackable: 1
   canBeOnTopOfOtherThings: 1
   rigidBody: {fileID: 8879162181408978330}
   theCollider: {fileID: 1231228482604985317}
@@ -147,8 +151,10 @@ MonoBehaviour:
   purchaseHunger: -20
   purchaseExcretion: 5
   purchaseHealth: 0
-  purchaseFilth: 0
+  purchaseFilth: 1
   filthPerMinute: 0
+  purchaseSatisfaction: 0
+  satisfactionPerSecond: 0
   itemsOnTop: []
 --- !u!60 &1231228482604985317
 PolygonCollider2D:

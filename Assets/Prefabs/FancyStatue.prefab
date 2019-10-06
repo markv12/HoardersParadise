@@ -191,9 +191,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb229603d1f97184c8dd7dbc50660a21, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  title: Fancy Statue
-  websiteDescription: 
-  purchaseEventText: 
+  title: 100% Authentic Greek Statue Replica
+  websiteDescription: YOU are currently viewing a 100% authenic replica of an ancient
+    Greek statue imported straight from Greece. This statue was hand-crafted by a
+    master of the ancient art of Greek sculpture and would be the perfect addition
+    to any household or office hallway.
+  purchaseEventText: The statue definitely has some wear and tear, but it still looks
+    beautiful. As an avid art lover, you feel incredilbly lucky and honored to be
+    able to own such a cool piece of history.
   sprite: {fileID: 21300000, guid: 5fae41684e183ea41abbbb6f4fd3539c, type: 3}
   stackable: 1
   canBeOnTopOfOtherThings: 0

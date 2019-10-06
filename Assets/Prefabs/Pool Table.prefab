@@ -191,13 +191,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb229603d1f97184c8dd7dbc50660a21, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  title: Pool Table
-  description: The real deal
+  title: Championship Pool Table
+  websiteDescription: Authentic billiards table used in a real Las Vegas Casino. Stop
+    being a poser and make yourself a real pool shark with one of these today.
+  purchaseEventText: What a cool find. The table has some stains on it, but you can
+    tell it has a deep history and really is an authentic Las Vegas pool table. Now
+    you can finally start practicing the game of pool, just like you've always dreamed.
   sprite: {fileID: 21300000, guid: 4bff0f0f4509f464590a04d909345abb, type: 3}
+  stackable: 1
   canBeOnTopOfOtherThings: 0
   rigidBody: {fileID: 8879162181408978330}
   theCollider: {fileID: 8879162181408978331}
   t: {fileID: 8879162181408978329}
   isoSorter: {fileID: 8879162181408978334}
   stackingLocation: {fileID: 4733873102666099514}
+  purchaseHunger: 0
+  purchaseExcretion: 0
+  purchaseHealth: 0
+  purchaseFilth: 0
+  filthPerMinute: 0
+  purchaseSatisfaction: 30
+  satisfactionPerSecond: 0
   itemsOnTop: []

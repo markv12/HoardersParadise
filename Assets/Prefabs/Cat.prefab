@@ -135,9 +135,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb229603d1f97184c8dd7dbc50660a21, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  title: Cat
-  websiteDescription: He cute tho
-  purchaseEventText: 
+  title: Used Cat
+  websiteDescription: Quality cat. As good as new.
+  purchaseEventText: Your cat arrived safely. It's super cute and seems to really
+    love you!
   sprite: {fileID: 21300000, guid: 377b425e3b5bafc489464869b147b5ef, type: 3}
   stackable: 0
   canBeOnTopOfOtherThings: 1

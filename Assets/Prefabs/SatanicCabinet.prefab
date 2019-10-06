@@ -191,9 +191,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb229603d1f97184c8dd7dbc50660a21, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  title: Satanic Cabinet
-  websiteDescription: 
-  purchaseEventText: 
+  title: Historical Antique Armoire
+  websiteDescription: Inherited from my uncle who claimed he was a wizard. I don't
+    want it.
+  purchaseEventText: The armoire is emanating with a magical, otherworldly aura. It's
+    definitely the portable closet you've always dreamed of. And you got it for such
+    a deal... Now you just need to find some clothes to put in it!
   sprite: {fileID: 21300000, guid: be08427d50718fa45a67c2104c0e4005, type: 3}
   stackable: 1
   canBeOnTopOfOtherThings: 0

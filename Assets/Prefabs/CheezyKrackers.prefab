@@ -161,9 +161,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   title: Cheezy Krackers
-  websiteDescription: 
-  purchaseEventText: 
+  websiteDescription: Tried one and didn't like the taste -- too cheesy for me. Freshly
+    opened and can be yours for an affordable price.
+  purchaseEventText: 'They were filled with so much salty, cheesy goodness that you
+    ate the entire bag in one go. '
   sprite: {fileID: 21300000, guid: ab80905a55314284ba1d6d5d1ea51770, type: 3}
+  stackable: 1
   canBeOnTopOfOtherThings: 1
   rigidBody: {fileID: 8879162181408978330}
   theCollider: {fileID: 8879162181408978331}
@@ -173,6 +176,8 @@ MonoBehaviour:
   purchaseHunger: -10
   purchaseExcretion: 2
   purchaseHealth: 0
-  purchaseFilth: 0
+  purchaseFilth: 1
   filthPerMinute: 0
+  purchaseSatisfaction: 0
+  satisfactionPerSecond: 0
   itemsOnTop: []
