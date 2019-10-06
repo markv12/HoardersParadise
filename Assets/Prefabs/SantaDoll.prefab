@@ -161,8 +161,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   title: Vintage Santa Claus Doll
-  websiteDescription: 
-  purchaseEventText: 
+  websiteDescription: I HATE CHRISTMAS!!
+  purchaseEventText: 'Awww, it''s so cute and fluffy! Having Santa watch over you
+    in your home makes you feel a little safer at night. '
   sprite: {fileID: 21300000, guid: 16252b0457c20d745a2efff6b5f02733, type: 3}
   stackable: 1
   canBeOnTopOfOtherThings: 1

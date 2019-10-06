@@ -199,8 +199,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   title: Dr. Muscle Home Fitness Machine
-  websiteDescription: 
-  purchaseEventText: 
+  websiteDescription: already got swole so I don't need it. A+++ would pump again.
+  purchaseEventText: YES1 You finally got your own Dr. Muscle Home Fitness Machine!
+    Now you finally have a convenient way to exercise without having to go all the
+    way to a gym. You've been putting off exercising for so long...now you can finally
+    get in shape once and for all!
   sprite: {fileID: 21300000, guid: 270d9bfdedf50594589cf8e82945fea1, type: 3}
   stackable: 1
   canBeOnTopOfOtherThings: 0

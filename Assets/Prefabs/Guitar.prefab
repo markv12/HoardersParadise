@@ -192,8 +192,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   title: Emperor Sapphire Memorabilia Guitar
-  websiteDescription: 
-  purchaseEventText: 
+  websiteDescription: 100% AUTHENTIC Diabolik V guitar used by  Emperor Sapphire in
+    the legendary 1982 concert in London. I DO NOT WANT TO SELL THIS but my mom is
+    making me!!
+  purchaseEventText: Whoa...you actually got an authentic piece of memorabilia from
+    Emperor Sapphire, one of your favorite heavy metal artists, and for such a a deal!
+    Now you can really call yourself a super fan!
   sprite: {fileID: 21300000, guid: 7aaa4a2a173da694f9ae922e7e16d229, type: 3}
   stackable: 1
   canBeOnTopOfOtherThings: 0
