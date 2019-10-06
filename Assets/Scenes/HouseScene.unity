@@ -1223,7 +1223,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.545, g: 0.34728095, b: 0.22999, a: 1}
+  m_Color: {r: 0.39200002, g: 0.2509928, b: 0.1663885, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -2406,7 +2406,7 @@ GameObject:
   - component: {fileID: 1019150025}
   - component: {fileID: 1019150024}
   m_Layer: 5
-  m_Name: HungerFrame
+  m_Name: FilthFrame
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4536,10 +4536,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthBar: {fileID: 488397989}
+  healthFrame: {fileID: 471055163}
   toiletBar: {fileID: 951001220}
+  toiletFrame: {fileID: 47496160}
   hungerBar: {fileID: 148900282}
+  hungerFrame: {fileID: 1789710340}
   filthBar: {fileID: 401251767}
+  filthFrame: {fileID: 1019150024}
   satisfactionText: {fileID: 621097930}
+  pissPrefab: {fileID: 8879162181408978335, guid: b4cf51e3c1ebdd747abdcc12f5c59706,
+    type: 3}
+  crapPrefab: {fileID: 8879162181408978335, guid: e639d3660d64da24db44973844c22695,
+    type: 3}
 --- !u!1 &1992994828
 GameObject:
   m_ObjectHideFlags: 0

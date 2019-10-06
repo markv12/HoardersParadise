@@ -8,10 +8,17 @@ public class StatUIManager : MonoBehaviour
     public static StatUIManager instance;
 
     public Image healthBar;
+    public Image healthFrame;
     public Image toiletBar;
+    public Image toiletFrame;
     public Image hungerBar;
+    public Image hungerFrame;
     public Image filthBar;
+    public Image filthFrame;
     public TMP_Text satisfactionText;
+
+    public MoveableItem pissPrefab;
+    public MoveableItem crapPrefab;
 
     private float health = 100;
     private float Health {
@@ -21,6 +28,7 @@ public class StatUIManager : MonoBehaviour
         set {
             health = Mathf.Min(100, Mathf.Max(0, value));
             healthBar.fillAmount = health / 100f;
+            healthFrame.color = health <= 10 ? Color.red : Color.white;
         }
     }
 
@@ -32,6 +40,7 @@ public class StatUIManager : MonoBehaviour
         set {
             toilet = Mathf.Min(100, Mathf.Max(0, value));
             toiletBar.fillAmount = toilet / 100f;
+            toiletFrame.color = toilet >= 90 ? Color.red : Color.white;
         }
     }
 
@@ -43,6 +52,7 @@ public class StatUIManager : MonoBehaviour
         set {
             hunger = Mathf.Min(100, Mathf.Max(0, value));
             hungerBar.fillAmount = hunger / 100f;
+            hungerFrame.color = hunger >= 90 ? Color.red : Color.white;
         }
     }
 
@@ -54,6 +64,7 @@ public class StatUIManager : MonoBehaviour
         set {
             filth = Mathf.Min(100, Mathf.Max(0, value));
             filthBar.fillAmount = filth / 100f;
+            filthFrame.color = filth >= 90 ? Color.red : Color.white;
         }
     }
 
@@ -76,8 +87,10 @@ public class StatUIManager : MonoBehaviour
         Filth = 0f;
     }
 
-    private const float HUNGER_PER_SECOND = 0.666f;
-    private const float TOILET_PER_SECOND = 0.666f;
+    private const float HUNGER_PER_SECOND = 15.666f;
+    private const float HUNGER_HEALTH_LOSS_PER_SECOND = 1f;
+    private const float TOILET_PER_SECOND = 15.666f;
+
     private float accumulatedSatisfaction = 0;
     void Update()
     {
@@ -88,7 +101,17 @@ public class StatUIManager : MonoBehaviour
 
         Filth += (currentFilthPerMinute / 60f) * Time.deltaTime;
         Hunger += HUNGER_PER_SECOND * Time.deltaTime; 
-        Toilet += TOILET_PER_SECOND * Time.deltaTime; 
+        Toilet += TOILET_PER_SECOND * Time.deltaTime;
+        if(Hunger >= 100) {
+            Health -= HUNGER_HEALTH_LOSS_PER_SECOND * Time.deltaTime;
+        }
+        if(Toilet >= 100) {
+            MoveableItem itemToCreate = Random.Range(0.0f, 1.0f) > 0.5f ? pissPrefab : crapPrefab;
+            Vector3 instantiateLocation = Player.instance.footTransform.position;
+            instantiateLocation.y -= 0.3f;
+            ComputerUIManager.instance.InstantiateItemType(itemToCreate, instantiateLocation);
+            Toilet = 0;
+        }
     }
 
     private List<MoveableItem> activeItems = new List<MoveableItem>();
