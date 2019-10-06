@@ -5,7 +5,7 @@ public class CatManager : MonoBehaviour
     private Vector2 currentDirection;
     public Rigidbody2D rgdBody;
 
-    private const float MOVEMENT_SPEED = 3f;
+    private const float MOVEMENT_SPEED = 1.5f;
 
     private void Awake() {
         currentDirection = GetRandomDirection();
