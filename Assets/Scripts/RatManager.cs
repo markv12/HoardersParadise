@@ -1,12 +1,12 @@
 ﻿using UnityEngine;
 
-public class CatManager : MonoBehaviour
+public class RatManager : MonoBehaviour
 {
     private Vector2 currentDirection;
     public Rigidbody2D rgdBody;
     public Transform spriteTransform;
 
-    private const float MOVEMENT_SPEED = 1.5f;
+    private const float MOVEMENT_SPEED = 2.5f;
 
     private void Awake() {
         currentDirection = GetRandomDirection();
