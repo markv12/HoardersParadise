@@ -192,8 +192,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   title: Ooze Soda
-  websiteDescription: 
-  purchaseEventText: 
+  websiteDescription: I unscrewed the cap by accident but I did not drink it. If you
+    don't believe me I can send you a pic of a full one with the cap on so you can
+    compare. I just don't want any more of these so I need to sell it.
+  purchaseEventText: You were so thirsty that you chugged the entire soda in a matter
+    of minutes. Super sweet, but goes down salty!
   sprite: {fileID: 21300000, guid: 5ca37a0b3cde8584e9dda84009c3eb52, type: 3}
   stackable: 1
   canBeOnTopOfOtherThings: 1
