@@ -191,9 +191,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb229603d1f97184c8dd7dbc50660a21, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  title: Christmas Tree
-  websiteDescription: 
-  purchaseEventText: 
+  title: Used Christmas Tree
+  websiteDescription: Set this up last Christmas, but it's still in great shape and
+    smells fresh! Happy to hand it off to any fellow Christmas enthusiast.
+  purchaseEventText: The Christmas Tree looks beautiful! And it really does smell
+    fresh, just like the ad claimed. Smelling it and looking at it reminds you of
+    holiday seasons, family gathering, and being warm and cozy by a fireplace. It
+    definitely feels like just what you needed.
   sprite: {fileID: 21300000, guid: d36bfec1468a7354ebcc3e92d433c387, type: 3}
   stackable: 1
   canBeOnTopOfOtherThings: 0
@@ -205,8 +209,8 @@ MonoBehaviour:
   purchaseHunger: 0
   purchaseExcretion: 0
   purchaseHealth: 0
-  purchaseFilth: 0
-  filthPerMinute: 0
-  purchaseSatisfaction: 30
+  purchaseFilth: 20
+  filthPerMinute: 1
+  purchaseSatisfaction: 1200
   satisfactionPerSecond: 0
   itemsOnTop: []
