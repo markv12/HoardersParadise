@@ -87,9 +87,9 @@ public class StatUIManager : MonoBehaviour
         Filth = 0f;
     }
 
-    private const float HUNGER_PER_SECOND = 15.666f;
+    private const float HUNGER_PER_SECOND = 1.666f;
     private const float HUNGER_HEALTH_LOSS_PER_SECOND = 1f;
-    private const float TOILET_PER_SECOND = 15.666f;
+    private const float TOILET_PER_SECOND = 1.666f;
 
     private float accumulatedSatisfaction = 0;
     void Update()
