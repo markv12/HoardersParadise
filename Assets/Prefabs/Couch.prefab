@@ -191,9 +191,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb229603d1f97184c8dd7dbc50660a21, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  title: Couch
-  websiteDescription: 
-  purchaseEventText: 
+  title: Bela Lugosi Memorabilia Couch
+  websiteDescription: Bela Lugosi once sat on this couch! (And he may have done other
+    things on it too, but I'm not telling.) If you're a Lugosi-head, this couch is
+    for you! I wish I could keep it myself, but I have to move, so I'm willing to
+    part with it for a very fair price.
+  purchaseEventText: The Bela Lugosi couch finally came! It has some stains on it,
+    but you've never been too much of a clean freak, and it still looks totally sitable.
+    You're just excited to have found this massive piece of history!
   sprite: {fileID: 21300000, guid: 30c55043e39768b459e8103370cfbad9, type: 3}
   stackable: 1
   canBeOnTopOfOtherThings: 0
