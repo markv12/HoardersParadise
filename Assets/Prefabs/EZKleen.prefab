@@ -207,7 +207,7 @@ MonoBehaviour:
   purchaseExcretion: 0
   purchaseHealth: 0
   purchaseFilth: -10
-  filthPerMinute: 0
+  filthPerMinute: 0.1
   purchaseSatisfaction: 250
   satisfactionPerSecond: 0
   itemsOnTop: []
