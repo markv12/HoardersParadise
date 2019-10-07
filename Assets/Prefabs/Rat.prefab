@@ -72,7 +72,7 @@ MonoBehaviour:
   renderBelowAll: 0
   moveableItem: {fileID: 3767925423049286367}
   movingDependencies: []
-  SorterPositionOffset: {x: -0.28920865, y: -0.1189363, z: 0}
+  SorterPositionOffset: {x: -0.2892089, y: -0.14254618, z: 0}
   renderersToSort: []
 --- !u!114 &3767925423049286367
 MonoBehaviour:
@@ -101,7 +101,7 @@ MonoBehaviour:
   purchaseExcretion: 0
   purchaseHealth: 0
   purchaseFilth: 0
-  filthPerMinute: 2
+  filthPerMinute: 0
   purchaseSatisfaction: 20
   satisfactionPerSecond: 0
   itemsOnTop: []
@@ -130,11 +130,11 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: -0.75269127, y: -0.10081947}
+    - - {x: -0.67112994, y: -0.12228298}
       - {x: -0.49144125, y: -0.18791723}
       - {x: 0.028266191, y: -0.1757276}
-      - {x: 0.07215834, y: -0.10183668}
-      - {x: -0.34484148, y: -0.05244863}
+      - {x: -0.0072567463, y: -0.116861105}
+      - {x: -0.30620718, y: -0.09752202}
 --- !u!114 &1806202800519027049
 MonoBehaviour:
   m_ObjectHideFlags: 0

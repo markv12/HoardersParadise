@@ -4150,6 +4150,7 @@ MonoBehaviour:
   ratPrefab: {fileID: 3767925423049286367, guid: d6cd4bb7f4b3eff42ace2369ee597ce2,
     type: 3}
   filthCreatureSpawnPosition: {fileID: 1706056415}
+  theRats: []
 --- !u!4 &1508600716
 Transform:
   m_ObjectHideFlags: 0
@@ -5475,9 +5476,9 @@ MonoBehaviour:
     type: 3}
   crapPrefab: {fileID: 8879162181408978335, guid: e639d3660d64da24db44973844c22695,
     type: 3}
-  hungerPerSecond: 1.5
+  hungerPerSecond: 1.666
   hungerHealthLossPerSecond: 2
-  toiletPerSecond: 1.2
+  toiletPerSecond: 1.1
 --- !u!1 &1992994828
 GameObject:
   m_ObjectHideFlags: 0
