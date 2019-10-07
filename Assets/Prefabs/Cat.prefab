@@ -153,7 +153,7 @@ MonoBehaviour:
   purchaseFilth: 1
   filthPerMinute: 1
   purchaseSatisfaction: 5000
-  satisfactionPerSecond: 1
+  satisfactionPerSecond: 2
   itemsOnTop: []
 --- !u!60 &6801967094204316837
 PolygonCollider2D:
