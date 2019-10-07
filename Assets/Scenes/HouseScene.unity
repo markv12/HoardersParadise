@@ -4862,6 +4862,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainObject: {fileID: 504551372}
+  t: {fileID: 504551373}
   alertText: {fileID: 1424828319}
   okButton: {fileID: 1884827195}
 --- !u!114 &1764401736
@@ -5477,7 +5478,7 @@ MonoBehaviour:
   crapPrefab: {fileID: 8879162181408978335, guid: e639d3660d64da24db44973844c22695,
     type: 3}
   hungerPerSecond: 1.666
-  hungerHealthLossPerSecond: 2
+  hungerHealthLossPerSecond: 5
   toiletPerSecond: 1.1
 --- !u!1 &1992994828
 GameObject:
