@@ -161,8 +161,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   title: Master Sensei Ramen Cup
-  websiteDescription: 
-  purchaseEventText: 
+  websiteDescription: Hand-pressed ramen seasoned with high quality Asian spices and
+    herbs, sculpting an uncanny taste without the help of any MSG. Masterful ramen,
+    from Japan to your microwave. (*This ad is not affiliated with Master Sensei Holdings
+    in any way shape or form.)
+  purchaseEventText: You're not really sure what flavor this is supposed to be, but
+    it sure tastes good! When you close your eyes while you eat it, you almost feel
+    like you're an anime character.
   sprite: {fileID: 21300000, guid: ba56b34de22f82f4696ebe27cfaf2ce0, type: 3}
   stackable: 1
   canBeOnTopOfOtherThings: 1
@@ -174,8 +179,8 @@ MonoBehaviour:
   purchaseHunger: -15
   purchaseExcretion: 10
   purchaseHealth: 0
-  purchaseFilth: 2
-  filthPerMinute: 1
+  purchaseFilth: 0
+  filthPerMinute: 0.2
   purchaseSatisfaction: 0
   satisfactionPerSecond: 0
   itemsOnTop: []
