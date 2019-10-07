@@ -2615,7 +2615,6 @@ MonoBehaviour:
   - {fileID: 1554518219}
   itemCollection: {fileID: 11400000, guid: d6eda93d5b3a6a6449191bffbb60e1fc, type: 2}
   instantiationLocation: {fileID: 1992994829}
-  infoTextSpawnLocation: {fileID: 1710559895}
 --- !u!1 &732124530
 GameObject:
   m_ObjectHideFlags: 0
@@ -3944,12 +3943,12 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 71
+  m_fontSize: 55
   m_fontSizeBase: 45
   m_fontWeight: 400
   m_enableAutoSizing: 1
   m_fontSizeMin: 0
-  m_fontSizeMax: 71
+  m_fontSizeMax: 55
   m_fontStyle: 0
   m_textAlignment: 257
   m_characterSpacing: 0
@@ -4546,7 +4545,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1091037651}
-  - {fileID: 1710559895}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4617,36 +4615,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1508600716}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1710559894
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1710559895}
-  m_Layer: 0
-  m_Name: InfoTextSpawnLocation
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1710559895
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1710559894}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.609, y: 1.176, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1702376444}
-  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1744567507
 PrefabInstance:
@@ -5508,7 +5476,7 @@ MonoBehaviour:
   crapPrefab: {fileID: 8879162181408978335, guid: e639d3660d64da24db44973844c22695,
     type: 3}
   hungerPerSecond: 1.5
-  hungerHealthLossPerSecond: 1
+  hungerHealthLossPerSecond: 2
   toiletPerSecond: 1.2
 --- !u!1 &1992994828
 GameObject:
@@ -5534,7 +5502,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1992994828}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 5.41, y: -2.63, z: 0}
+  m_LocalPosition: {x: 0.33, y: -2.89, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}

@@ -29,7 +29,7 @@ public class StatUIManager : MonoBehaviour
         set {
             health = Mathf.Min(100, Mathf.Max(0, value));
             healthBar.fillAmount = health / 100f;
-            healthFrame.color = health <= 10 ? Color.red : Color.white;
+            healthFrame.color = health <= 25 ? Color.red : Color.white;
         }
     }
 
@@ -41,7 +41,7 @@ public class StatUIManager : MonoBehaviour
         set {
             toilet = Mathf.Min(100, Mathf.Max(0, value));
             toiletBar.fillAmount = toilet / 100f;
-            toiletFrame.color = toilet >= 90 ? Color.red : Color.white;
+            toiletFrame.color = toilet >= 75 ? Color.red : Color.white;
         }
     }
 
@@ -53,7 +53,7 @@ public class StatUIManager : MonoBehaviour
         set {
             hunger = Mathf.Min(100, Mathf.Max(0, value));
             hungerBar.fillAmount = hunger / 100f;
-            hungerFrame.color = hunger >= 90 ? Color.red : Color.white;
+            hungerFrame.color = hunger >= 75 ? Color.red : Color.white;
         }
     }
 
@@ -65,7 +65,7 @@ public class StatUIManager : MonoBehaviour
         private set {
             filth = Mathf.Min(100, Mathf.Max(0, value));
             filthBar.fillAmount = filth / 100f;
-            filthFrame.color = filth >= 90 ? Color.red : Color.white;
+            filthFrame.color = filth >= 75 ? Color.red : Color.white;
         }
     }
 

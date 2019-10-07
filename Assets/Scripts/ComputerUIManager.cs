@@ -9,7 +9,6 @@ public class ComputerUIManager : MonoBehaviour {
     public ItemPanelManager[] itemPanels;
     public ItemCollection itemCollection;
     public Transform instantiationLocation;
-    public Transform infoTextSpawnLocation;
 
     void Awake() {
         mainObject.SetActive(false);
@@ -29,7 +28,7 @@ public class ComputerUIManager : MonoBehaviour {
         }
         InstantiateItem(item, instantiationLocation.position);
         if (item.purchaseSatisfaction != 0) {
-            InfoCirclePool.instance.ShowInfoCircle("Satisfaction " + ItemPanelManager.GetNumberString(item.purchaseSatisfaction), infoTextSpawnLocation.position);
+            InfoCirclePool.instance.ShowInfoCircle("Satisfaction " + ItemPanelManager.GetNumberString(item.purchaseSatisfaction), instantiationLocation.position, Color.black, 0.4f);
         }
     }
 

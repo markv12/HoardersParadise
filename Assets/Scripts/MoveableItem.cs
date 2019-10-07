@@ -116,7 +116,7 @@ public class MoveableItem : MonoBehaviour
         int result = 0;
         if (items.Count != 0) {
             {
-                result += 15 * (int)Mathf.Pow(2, items.Count);
+                result += 30 * (int)Mathf.Pow(2, items.Count);
                 visitedItems.Clear();
                 tempItemList.Clear();
                 tempItemList.Add(baseItem);
@@ -131,9 +131,9 @@ public class MoveableItem : MonoBehaviour
                     }
                 }
                 foreach (int count in visitedItems.Values) {
-                    result += (int)Mathf.Pow(3, count);
                     if(count > 1) {
-                        result += 100 * count;
+                        result += (int)Mathf.Pow(4, count + 1);
+                        result += 125 * count;
                     }
                 }
             }
