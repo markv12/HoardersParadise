@@ -79,7 +79,7 @@ public class MoveableItem : MonoBehaviour
     }
 
     private static bool WillStackFall(int stackHeight) {
-        float percentChanceOfFall = Mathf.Max(0.0f, ((float)stackHeight - 2) / 11f);
+        float percentChanceOfFall = Mathf.Max(0.0f, ((float)stackHeight - 2) / 9f);
         return UnityEngine.Random.Range(0.0f, 1.0f) < percentChanceOfFall;
     }
 

@@ -34,7 +34,8 @@ public class RatManager : MonoBehaviour
         Player p = collision.gameObject.GetComponent<Player>();
         if (p != null) {
             StatUIManager.instance.Health -= 15;
-            AlertCanvasManager.instance.ShowAlert("As the rat sinks its sharp teeth deep into your flesh, you scream and stomp down on its grimy tail. The wound stings, but what hurts more than anything is your pride. They invaded your sanctuary, subsisting off your crumbs and crafting their foul nests in your belongings. You can't let them get the last laugh...bombs, cats, potpourri, you need to throw everything you have at them!" + System.Environment.NewLine + "Health -15");
+            AlertCanvasManager.instance.ShowAlert("As the rat sinks its sharp teeth deep into your flesh, you scream and stomp down on its grimy tail. The wound stings, but what hurts more than anything is your pride. They invaded your sanctuary, subsisting off your crumbs and crafting their foul nests in your belongings. You can't let them get the last laugh...E-Z Kleen, potpourri, you need to throw everything you have at them!" + System.Environment.NewLine + "Health -15");
+            InfoCirclePool.instance.ShowInfoCircle("Health -15", p.spriteTransform.position, Color.red, 0.3f);
         }
     }
 }
