@@ -192,7 +192,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   title: E-Z Kleen
-  websiteDescription: Bought two by accident. My house is already clean enough.
+  websiteDescription: My house is already clean enough. Knock yourself out.
   purchaseEventText: You spray the can of E-Z Kleen all around the room. It sure smells
     like everything is a lot cleaner now!
   sprite: {fileID: 21300000, guid: 85380c70ce1f57c41b54b120cab3bf14, type: 3}

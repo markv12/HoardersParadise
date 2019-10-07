@@ -192,8 +192,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   title: Bob Chikin's Chicken Pot Pie
-  websiteDescription: 
-  purchaseEventText: 
+  websiteDescription: Bought a carton of these after seeing a review on Youtube...Super
+    salty and full of chickeny goodness but my body just can't take all this sodium
+    anymore. It's tearing me apart.
+  purchaseEventText: Chunks of greasy chicken with some yummy salty goop and flaky
+    crust - it tastes just as good as you imagined! Definitely hit the spot, especially
+    considering it didn't even cost a whole dollar!
   sprite: {fileID: 21300000, guid: f1336e212e2cd7448aad0dfc9cb5b93a, type: 3}
   stackable: 1
   canBeOnTopOfOtherThings: 1
