@@ -1,4 +1,4 @@
-﻿using System.Collections;
+﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -10,12 +10,15 @@ public class ComputerUIManager : MonoBehaviour {
     public ItemCollection itemCollection;
     public Transform instantiationLocation;
 
+    private List<MoveableItem> tempItems = new List<MoveableItem>();
+
     void Awake() {
         mainObject.SetActive(false);
         instance = this;
         for (int i = 0; i < itemPanels.Length; i++) {
             itemPanels[i].itemPanelClickedEvent += ItemPanelClickedHandler;
         }
+        FillWithRandomItems(tempItems);
     }
 
     private HashSet<string> seenItemNames = new HashSet<string>();
@@ -32,17 +35,32 @@ public class ComputerUIManager : MonoBehaviour {
         }
     }
 
-    private List<MoveableItem> tempItems = new List<MoveableItem>();
+    private int tempItemsIndex = 0;
     public void ShowComputerUI() {
         mainObject.SetActive(true);
         Time.timeScale = 0;
-        tempItems.AddRange(itemCollection.items);
         for (int i = 0; i < itemPanels.Length; i++) {
-            int randomInt = Random.Range(0, tempItems.Count);
-            itemPanels[i].Item = tempItems[randomInt];
-            tempItems.RemoveAt(randomInt);
+            itemPanels[i].Item = tempItems[tempItemsIndex];
+            tempItemsIndex++;
+            if(tempItemsIndex >= tempItems.Count) {
+                tempItems.Clear();
+                FillWithRandomItems(tempItems);
+                tempItemsIndex = 0;
+            }
         }
-        tempItems.Clear();
+    }
+
+    private static System.Random rng = new System.Random();
+    private void FillWithRandomItems(List<MoveableItem> tempItems) {
+        tempItems.AddRange(itemCollection.items);
+        int n = tempItems.Count;
+        while (n > 1) {
+            n--;
+            int k = rng.Next(n + 1);
+            MoveableItem value = tempItems[k];
+            tempItems[k] = tempItems[n];
+            tempItems[n] = value;
+        }
     }
 
     public void InstantiateItem(MoveableItem item, Vector3 position) {

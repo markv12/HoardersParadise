@@ -153,7 +153,7 @@ public class StatUIManager : MonoBehaviour
     }
 
     private IEnumerator StartMessageEnumerator() {
-        yield return new WaitForSeconds(1.333f);
+        yield return new WaitForSeconds(0.8f);
         AlertCanvasManager.instance.ShowAlert(startText);
     }
 
