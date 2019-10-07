@@ -32,7 +32,6 @@ public class MoveableItem : MonoBehaviour
 
     public List<MoveableItem> itemsOnTop = new List<MoveableItem>();
     private int lastStackValue = 0;
-    public InfoCircle infoCircle = null;
 
     [NonSerialized]
     public bool partOfStack = false;
@@ -106,13 +105,9 @@ public class MoveableItem : MonoBehaviour
         int previousStackValue = GetStackValue(this, itemsOnTop);
         itemsOnTop.Add(otherItem);
         int currentStackValue = GetStackValue(this, itemsOnTop);
-        StatUIManager.instance.Satisfaction += (currentStackValue - previousStackValue);
-        if (infoCircle == null) {
-            infoCircle = InfoCirclePool.instance.GetInfoCircle();
-            infoCircle.t.SetParent(t, false);
-            infoCircle.t.localPosition = Vector3.zero;
-        }
-        infoCircle.infoText.text = ItemPanelManager.GetNumberString(currentStackValue);
+        int valueDiff = currentStackValue - previousStackValue;
+        StatUIManager.instance.Satisfaction += (valueDiff);
+        InfoCirclePool.instance.ShowInfoCircle("Satisfaction " + ItemPanelManager.GetNumberString(valueDiff), t.position);
     }
 
     private static Dictionary<string, int> visitedItems = new Dictionary<string, int>();
@@ -147,10 +142,6 @@ public class MoveableItem : MonoBehaviour
     }
 
     private void CollapseStack(Vector3 collapseSource) {
-        if (infoCircle != null) {
-            InfoCirclePool.instance.DisposeInfoCircle(infoCircle);
-            infoCircle = null;
-        }
         lastStackStatusChangeFrame = Time.frameCount;
         Vector3 collapseDirection = (collapseSource - t.position).normalized;
         for (int i = 0; i < itemsOnTop.Count; i++) {
@@ -161,9 +152,12 @@ public class MoveableItem : MonoBehaviour
             Vector3 collapseVector = (collapseDirection * 1f) * (i + 1);
             StartCoroutine(MoveOffOfStack(item, collapseVector));
         }
-        StatUIManager.instance.Satisfaction -= GetStackValue(this, itemsOnTop);
+        int stackValue = GetStackValue(this, itemsOnTop);
+        StatUIManager.instance.Satisfaction -= stackValue;
+        InfoCirclePool.instance.ShowInfoCircle("Satisfaction " + ItemPanelManager.GetNumberString(-stackValue), t.position, Color.red);
         itemsOnTop.Clear();
         StatUIManager.instance.Health -= 5;
+        InfoCirclePool.instance.ShowInfoCircle("Health -5", t.position, Color.red);
     }
 
     private const float FALL_OFF_TIME = 0.2f;

@@ -12,6 +12,14 @@ public class InfoCirclePool : MonoBehaviour
 
     private List<InfoCircle> freeInfoCircles = new List<InfoCircle>(16);
 
+    public void ShowInfoCircle(string theText, Vector3 thePosition) {
+        ShowInfoCircle(theText, thePosition, Color.black);
+    }
+    public void ShowInfoCircle(string theText, Vector3 thePosition, Color theColor) {
+        InfoCircle newCircle = GetInfoCircle();
+        newCircle.PlayAnimation(theText, thePosition, theColor);
+    }
+
     public InfoCircle GetInfoCircle() {
         InfoCircle result;
         if (freeInfoCircles.Count > 0) {
