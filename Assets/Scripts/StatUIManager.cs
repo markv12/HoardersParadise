@@ -21,7 +21,7 @@ public class StatUIManager : MonoBehaviour
     public MoveableItem crapPrefab;
 
     private float health = 100;
-    private float Health {
+    public float Health {
         get {
             return health;
         }
@@ -57,11 +57,11 @@ public class StatUIManager : MonoBehaviour
     }
 
     private float filth = 0;
-    private float Filth {
+    public float Filth {
         get {
             return filth;
         }
-        set {
+        private set {
             filth = Mathf.Min(100, Mathf.Max(0, value));
             filthBar.fillAmount = filth / 100f;
             filthFrame.color = filth >= 90 ? Color.red : Color.white;
@@ -69,7 +69,7 @@ public class StatUIManager : MonoBehaviour
     }
 
     private int satisfaction = 0;
-    private int Satisfaction {
+    public int Satisfaction {
         get {
             return satisfaction;
         }
@@ -126,5 +126,11 @@ public class StatUIManager : MonoBehaviour
         Satisfaction += newItem.purchaseSatisfaction;
         currentFilthPerMinute += newItem.filthPerMinute;
         currentSatisfactionPerSecond += newItem.satisfactionPerSecond;
+    }
+
+    public void UnRegisterItem(MoveableItem itemToRemove) {
+        activeItems.Add(itemToRemove);
+        currentFilthPerMinute -= itemToRemove.filthPerMinute;
+        currentSatisfactionPerSecond -= itemToRemove.satisfactionPerSecond;
     }
 }

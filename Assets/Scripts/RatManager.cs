@@ -6,7 +6,7 @@ public class RatManager : MonoBehaviour
     public Rigidbody2D rgdBody;
     public Transform spriteTransform;
 
-    private const float MOVEMENT_SPEED = 2.5f;
+    private const float MOVEMENT_SPEED = 3f;
 
     private void Awake() {
         currentDirection = GetRandomDirection();

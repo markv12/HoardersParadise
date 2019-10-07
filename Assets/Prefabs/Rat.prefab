@@ -72,7 +72,7 @@ MonoBehaviour:
   renderBelowAll: 0
   moveableItem: {fileID: 3767925423049286367}
   movingDependencies: []
-  SorterPositionOffset: {x: -0.0056989193, y: -0.77455187, z: 0}
+  SorterPositionOffset: {x: -0.28920865, y: -0.1189363, z: 0}
   renderersToSort: []
 --- !u!114 &3767925423049286367
 MonoBehaviour:
@@ -103,7 +103,7 @@ MonoBehaviour:
   purchaseFilth: 0
   filthPerMinute: 1
   purchaseSatisfaction: 20
-  satisfactionPerSecond: 1
+  satisfactionPerSecond: 0
   itemsOnTop: []
 --- !u!60 &6801967094204316837
 PolygonCollider2D:

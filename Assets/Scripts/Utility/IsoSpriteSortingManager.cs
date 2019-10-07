@@ -52,7 +52,7 @@ public class IsoSpriteSortingManager : Singleton<IsoSpriteSortingManager>
         {
             spriteList[i].RendererSortingOrder = orderCurrent;
             MoveableItem item = spriteList[i].moveableItem;
-            orderCurrent += (1 + (item == null ? 0 : item.itemsOnTop.Count));
+            orderCurrent += (1 + (item == null ? 0 : item.itemsOnTop.Count + 2)); //Make space for stacked things and infoText if present
         }
     }
 

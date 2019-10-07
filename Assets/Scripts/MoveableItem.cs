@@ -31,6 +31,8 @@ public class MoveableItem : MonoBehaviour
     public int satisfactionPerSecond;
 
     public List<MoveableItem> itemsOnTop = new List<MoveableItem>();
+    private int lastStackValue = 0;
+    public InfoCircle infoCircle = null;
 
     [NonSerialized]
     public bool partOfStack = false;
@@ -61,20 +63,25 @@ public class MoveableItem : MonoBehaviour
                     }
                 }
             }
-            Player player = collision.gameObject.GetComponent<Player>();
-            if (player != null && itemsOnTop.Count > 0) {
-                CollapseStack(player.footTransform.position);
-            }
         }
     }
 
     private void PutItemOnTop(MoveableItem otherItem) {
-        lastStackStatusChangeFrame = Time.frameCount;
-        otherItem.lastStackStatusChangeFrame = Time.frameCount;
-        otherItem.DestroyPhysics();
-        otherItem.isoSorter.Unregister();
-        otherItem.t.SetParent(t, true);
-        StartCoroutine(MoveOnToStack(otherItem));
+        if (WillStackFall(itemsOnTop.Count)) {
+            CollapseStack(Player.instance.footTransform.position);
+        } else {
+            lastStackStatusChangeFrame = Time.frameCount;
+            otherItem.lastStackStatusChangeFrame = Time.frameCount;
+            otherItem.DestroyPhysics();
+            otherItem.isoSorter.Unregister();
+            otherItem.t.SetParent(t, true);
+            StartCoroutine(MoveOnToStack(otherItem));
+        }
+    }
+
+    private static bool WillStackFall(int stackHeight) {
+        float percentChanceOfFall = Mathf.Max(0.0f, ((float)stackHeight - 2) / 11f);
+        return UnityEngine.Random.Range(0.0f, 1.0f) < percentChanceOfFall;
     }
 
     private const float MOVE_ON_TIME = 0.3f;
@@ -94,11 +101,55 @@ public class MoveableItem : MonoBehaviour
             yield return null;
         }
         otherItem.t.localPosition = endPos;
-        itemsOnTop.Add(otherItem);
         otherItem.partOfStack = true;
+
+        int previousStackValue = GetStackValue(this, itemsOnTop);
+        itemsOnTop.Add(otherItem);
+        int currentStackValue = GetStackValue(this, itemsOnTop);
+        StatUIManager.instance.Satisfaction += (currentStackValue - previousStackValue);
+        if (infoCircle == null) {
+            infoCircle = InfoCirclePool.instance.GetInfoCircle();
+            infoCircle.t.SetParent(t, false);
+            infoCircle.t.localPosition = Vector3.zero;
+        }
+        infoCircle.infoText.text = ItemPanelManager.GetNumberString(currentStackValue);
+    }
+
+    private static Dictionary<string, int> visitedItems = new Dictionary<string, int>();
+    private static List<MoveableItem> tempItemList = new List<MoveableItem>();
+    private static int GetStackValue(MoveableItem baseItem, List<MoveableItem> items) {
+        int result = 0;
+        if (items.Count != 0) {
+            {
+                result += 15 * (int)Mathf.Pow(2, items.Count);
+                visitedItems.Clear();
+                tempItemList.Clear();
+                tempItemList.Add(baseItem);
+                tempItemList.AddRange(items);
+                for (int i = 0; i < tempItemList.Count; i++) {
+                    MoveableItem item = tempItemList[i];
+                    int value;
+                    if (visitedItems.TryGetValue(item.title, out value)) {
+                        visitedItems[item.title] = value + 1;
+                    } else {
+                        visitedItems[item.title] = 1;
+                    }
+                }
+                foreach (int count in visitedItems.Values) {
+                    result += (int)Mathf.Pow(3, count);
+                    if(count > 1) {
+                        result += 100 * count;
+                    }
+                }
+            }
+        }
+        return result;
     }
 
     private void CollapseStack(Vector3 collapseSource) {
+        if (infoCircle != null) {
+            InfoCirclePool.instance.DisposeInfoCircle(infoCircle);
+        }
         lastStackStatusChangeFrame = Time.frameCount;
         Vector3 collapseDirection = (collapseSource - t.position).normalized;
         for (int i = 0; i < itemsOnTop.Count; i++) {
@@ -106,10 +157,12 @@ public class MoveableItem : MonoBehaviour
             item.isoSorter.Register();
             item.t.SetParent(null, true);
             item.lastStackStatusChangeFrame = Time.frameCount;
-            Vector3 collapseVector = (collapseDirection * 1.2f) * (i + 1);
+            Vector3 collapseVector = (collapseDirection * 1f) * (i + 1);
             StartCoroutine(MoveOffOfStack(item, collapseVector));
         }
+        StatUIManager.instance.Satisfaction -= GetStackValue(this, itemsOnTop);
         itemsOnTop.Clear();
+        StatUIManager.instance.Health -= 5;
     }
 
     private const float FALL_OFF_TIME = 0.2f;

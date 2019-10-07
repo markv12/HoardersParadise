@@ -114,8 +114,13 @@ public class IsoSpriteSorting : MonoBehaviour
                 renderersToSort[j].sortingOrder = value;
             }
             if (moveableItem != null) {
-                for (int i = 0; i < moveableItem.itemsOnTop.Count; i++) {
+                int itemOnTopCount = moveableItem.itemsOnTop.Count;
+                for (int i = 0; i < itemOnTopCount; i++) {
                     moveableItem.itemsOnTop[i].isoSorter.RendererSortingOrder = value + (i + 1);
+                }
+                if(moveableItem.infoCircle != null) {
+                    moveableItem.infoCircle.backgroundImage.sortingOrder = (value + itemOnTopCount + 1);
+                    moveableItem.infoCircle.infoText.sortingOrder = (value + itemOnTopCount + 2);
                 }
             }
         }

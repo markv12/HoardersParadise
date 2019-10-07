@@ -62,7 +62,7 @@ public class ItemPanelManager : MonoBehaviour
         return result;
     }
 
-    private static string GetNumberString(float number) {
+    public static string GetNumberString(float number) {
         return number >= 0 ? "+" + number.ToString() : number.ToString();
     }
 
