@@ -140,7 +140,7 @@ MonoBehaviour:
   purchaseEventText: All the gauze and bandages inside the first aid kit remind you
     of when you tied up your first crush in elementary school. They couldn't move...they
     were right there in front of you, helpless. It was so fun.
-  sprite: {fileID: 21300000, guid: 7912045210ba03c479592bd809e08324, type: 3}
+  sprite: {fileID: 21300000, guid: 1ae6698baf849ac498b05dc6f84bc208, type: 3}
   stackable: 1
   canBeOnTopOfOtherThings: 1
   rigidBody: {fileID: 8879162181408978330}
