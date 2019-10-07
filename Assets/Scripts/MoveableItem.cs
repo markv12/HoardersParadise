@@ -37,7 +37,7 @@ public class MoveableItem : MonoBehaviour
     [NonSerialized]
     public bool partOfStack = false;
     private int lastStackStatusChangeFrame = 0;
-    private const int FRAME_WAIT_COUNT = 35;
+    private const int FRAME_WAIT_COUNT = 120;
     private void OnCollisionEnter2D(Collision2D collision) {
         if (Time.frameCount - lastStackStatusChangeFrame > FRAME_WAIT_COUNT) {
             MoveableItem otherItem = collision.gameObject.GetComponent<MoveableItem>();
