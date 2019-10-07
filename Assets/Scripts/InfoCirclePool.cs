@@ -18,6 +18,7 @@ public class InfoCirclePool : MonoBehaviour
             result = freeInfoCircles[freeInfoCircles.Count - 1];
             freeInfoCircles.RemoveAt(freeInfoCircles.Count - 1);
             result.gameObject.SetActive(true);
+            result.t.localScale = new Vector3(1, 1, 1);
         } else {
             result = GetNewInfoCircle();
         }

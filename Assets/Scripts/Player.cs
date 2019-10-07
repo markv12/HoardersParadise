@@ -13,6 +13,7 @@ public class Player : MonoBehaviour
     public Sprite rightSprite;
     public Sprite upSprite;
     public Sprite downSprite;
+    public Sprite deadSprite;
 
     public static Player instance;
 

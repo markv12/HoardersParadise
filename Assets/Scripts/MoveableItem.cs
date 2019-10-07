@@ -149,6 +149,7 @@ public class MoveableItem : MonoBehaviour
     private void CollapseStack(Vector3 collapseSource) {
         if (infoCircle != null) {
             InfoCirclePool.instance.DisposeInfoCircle(infoCircle);
+            infoCircle = null;
         }
         lastStackStatusChangeFrame = Time.frameCount;
         Vector3 collapseDirection = (collapseSource - t.position).normalized;

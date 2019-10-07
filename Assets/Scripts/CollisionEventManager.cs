@@ -11,9 +11,7 @@ public class CollisionEventManager : MonoBehaviour
 
     public CanvasGroup mainGroup;
     public TMP_Text eventText;
-    public TMP_Text positiveOptionText;
     public Button positiveButton;
-    public TMP_Text negativeOptionText;
     public Button negativeButton;
 
     private bool showing;
@@ -36,12 +34,10 @@ public class CollisionEventManager : MonoBehaviour
 
     private Action confirmAction = null;
     private Action cancelAction = null;
-    public void ShowEvent(string eventTitle, Action _confirmAction, Action _cancelAction, string confirmText = "YES", string cancelText = "NO") {
+    public void ShowEvent(string eventTitle, Action _confirmAction, Action _cancelAction) {
         confirmAction = _confirmAction;
         cancelAction = _cancelAction;
         eventText.text = eventTitle;
-        negativeOptionText.text = cancelText;
-        positiveOptionText.text = confirmText;
 
         Showing = true;
     }

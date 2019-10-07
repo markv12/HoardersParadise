@@ -28,12 +28,22 @@ public class AlertCanvasManager : MonoBehaviour
         okButton.onClick.AddListener(delegate { DoOK(); });
     }
 
-    public void ShowAlert(string _alertText) {
+    private void Update() {
+        if(Input.GetKeyDown(KeyCode.E) || Input.GetKeyDown(KeyCode.Space)) {
+            DoOK();
+        }
+    }
+
+    private System.Action onComplete = null;
+    public void ShowAlert(string _alertText, System.Action _onComplete = null) {
         alertText.text = _alertText;
         Showing = true;
+        onComplete = _onComplete;
     }
 
     private void DoOK() {
         Showing = false;
+        onComplete?.Invoke();
+        onComplete = null;
     }
 }

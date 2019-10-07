@@ -7,16 +7,8 @@ public class ToiletManager : MonoBehaviour
         Player player = collision.gameObject.GetComponent<Player>();
         if (player != null) {
             if (StatUIManager.instance.Toilet > 50) {
-                Time.timeScale = 0;
-                Action confirmAction = delegate {
-                    StatUIManager.instance.Toilet = 0;
-                    Time.timeScale = 1;
-                };
-                Action cancelAction = delegate {
-                    Time.timeScale = 1;
-
-                };
-                CollisionEventManager.instance.ShowEvent("Use the Bathroom?", confirmAction, cancelAction);
+                StatUIManager.instance.Toilet = 0;
+                AlertCanvasManager.instance.ShowAlert("You made it to the bathroom in time?");
             } else {
                 AlertCanvasManager.instance.ShowAlert("You don't have to go to the bathroom yet.");
             }
