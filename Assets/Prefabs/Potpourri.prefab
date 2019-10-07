@@ -192,9 +192,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   title: E-Z Kleen
-  websiteDescription: My house is already clean enough. Knock yourself out.
-  purchaseEventText: You spray the can of E-Z Kleen all around the room. It sure smells
-    like everything is a lot cleaner now!
+  websiteDescription: Bio-degradable organic potpourri made from natural sources I
+    found around my home. Whatever you do, do not burn it after midnight.
+  purchaseEventText: Mmm...such a nice smell. Reminds you of grandma's house!
   sprite: {fileID: 21300000, guid: a1f4ba7f3ad0a0f4aa1a468d9b71b4bb, type: 3}
   stackable: 1
   canBeOnTopOfOtherThings: 1
