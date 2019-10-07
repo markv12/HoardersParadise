@@ -102,7 +102,7 @@ MonoBehaviour:
   purchaseHealth: 0
   purchaseFilth: 0
   filthPerMinute: 0
-  purchaseSatisfaction: 20
+  purchaseSatisfaction: 0
   satisfactionPerSecond: 0
   itemsOnTop: []
 --- !u!60 &6801967094204316837
