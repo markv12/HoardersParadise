@@ -150,7 +150,7 @@ MonoBehaviour:
   stackingLocation: {fileID: 0}
   purchaseHunger: 0
   purchaseExcretion: 0
-  purchaseHealth: 30
+  purchaseHealth: 15
   purchaseFilth: 0
   filthPerMinute: 0.4
   purchaseSatisfaction: 200
