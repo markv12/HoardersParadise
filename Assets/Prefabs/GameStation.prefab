@@ -208,7 +208,7 @@ MonoBehaviour:
   purchaseHunger: 0
   purchaseExcretion: 0
   purchaseHealth: 0
-  purchaseFilth: 1
+  purchaseFilth: 2
   filthPerMinute: 0
   purchaseSatisfaction: 7000
   satisfactionPerSecond: 0

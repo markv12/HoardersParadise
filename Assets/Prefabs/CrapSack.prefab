@@ -207,8 +207,8 @@ MonoBehaviour:
   purchaseHunger: 0
   purchaseExcretion: 0
   purchaseHealth: 0
-  purchaseFilth: 10
-  filthPerMinute: 1
+  purchaseFilth: 20
+  filthPerMinute: 2
   purchaseSatisfaction: 0
   satisfactionPerSecond: 0
   itemsOnTop: []
