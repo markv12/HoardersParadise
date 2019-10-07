@@ -191,7 +191,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb229603d1f97184c8dd7dbc50660a21, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  title: E-Z Kleen
+  title: Potpourri
   websiteDescription: Bio-degradable organic potpourri made from natural sources I
     found around my home. Whatever you do, do not burn it after midnight.
   purchaseEventText: Mmm...such a nice smell. Reminds you of grandma's house!
