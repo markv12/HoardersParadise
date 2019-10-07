@@ -156,8 +156,8 @@ public class MoveableItem : MonoBehaviour
         StatUIManager.instance.Satisfaction -= stackValue;
         InfoCirclePool.instance.ShowInfoCircle("Satisfaction " + ItemPanelManager.GetNumberString(-stackValue), t.position, Color.red);
         itemsOnTop.Clear();
-        StatUIManager.instance.Health -= 5;
-        InfoCirclePool.instance.ShowInfoCircle("Health -5", t.position, Color.red);
+        StatUIManager.instance.Health -= 15;
+        InfoCirclePool.instance.ShowInfoCircle("Health -15", t.position, Color.red, 0.3f);
     }
 
     private const float FALL_OFF_TIME = 0.2f;

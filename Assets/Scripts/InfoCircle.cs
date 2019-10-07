@@ -7,19 +7,19 @@ public class InfoCircle : MonoBehaviour
     public Transform t;
     public TextMeshPro infoText;
 
-    public void PlayAnimation(string theText, Vector3 thePosition, Color theColor) {
+    public void PlayAnimation(string theText, Vector3 thePosition, Color theColor, float heightOffset) {
         infoText.text = theText;
         t.position = thePosition;
         infoText.color = theColor;
-        StartCoroutine(_animation());
+        StartCoroutine(_animation(heightOffset));
     }
-    private const float ANIM_TIME = 1.5f;
-    private const float COLOR_FADE_TIME = 0.4f;
-    private IEnumerator _animation() {
+    private const float ANIM_TIME = 1.8f;
+    private const float COLOR_FADE_TIME = 0.5f;
+    private IEnumerator _animation(float heightOffset) {
         float elapsedTime = 0;
         float progress = 0;
         Vector3 startPos = t.position;
-        Vector3 endPos = startPos + new Vector3(0, 0.8f, 0);
+        Vector3 endPos = startPos + new Vector3(0, 0.8f + heightOffset, 0);
         while (progress <= 1) {
             elapsedTime += Time.deltaTime;
             progress = elapsedTime / ANIM_TIME;
