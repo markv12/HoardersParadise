@@ -196,7 +196,7 @@ MonoBehaviour:
     fine, but I've already graduated from them.
   purchaseEventText: Your GSX works perfectly! This is the most popular game console
     right now, and has the biggest library of games. You can't wait to go on some
-    adventures and finally beat all those games on your to-do list!
+    adventures and finally beat all those games you've been meaning to get to!
   sprite: {fileID: 21300000, guid: ae06afbcab685d948ba5a35b23dd2500, type: 3}
   stackable: 1
   canBeOnTopOfOtherThings: 1
@@ -213,3 +213,4 @@ MonoBehaviour:
   purchaseSatisfaction: 7000
   satisfactionPerSecond: 0
   itemsOnTop: []
+  infoCircle: {fileID: 0}
